@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社群互動 - 健康生活健身網</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="fitness.html">健身計畫</a></li>
+                <li><a href="diet.html">飲食建議</a></li>
+                <li><a href="community.html">社群互動</a></li>
+                <li><a href="equipment.html">器材推薦</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="community-page">
+        <h1>分享你的健身故事</h1>
+
+        <section class="share-experience">
+            <h2>分享經驗</h2>
+            <form id="experienceForm" onsubmit="return submitExperience(event)">
+                <div class="form-group">
+                    <label for="userName">姓名 <span class="required">*</span></label>
+                    <input type="text" id="userName" required maxlength="20">
+                    <span class="char-count">0/20</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="userGoal">健身目標 <span class="required">*</span></label>
+                    <select id="userGoal" required>
+                        <option value="">請選擇目標</option>
+                        <option value="增肌">增肌</option>
+                        <option value="減脂">減脂</option>
+                        <option value="體能">提升體能</option>
+                        <option value="健康">改善健康</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">健身時長</label>
+                    <input type="number" id="duration" min="1" max="120" placeholder="月">
+                </div>
+
+                <div class="form-group">
+                    <label for="achievement">最佳成就</label>
+                    <input type="text" id="achievement" maxlength="50" placeholder="例：深蹲100kg、體脂降至15%">
+                    <span class="char-count">0/50</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">心得分享 <span class="required">*</span></label>
+                    <textarea id="experience" required minlength="50" maxlength="500" rows="6"></textarea>
+                    <span class="char-count">0/500</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tips">給新手的建議</label>
+                    <textarea id="tips" maxlength="200" rows="3"></textarea>
+                    <span class="char-count">0/200</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="userImage">分享圖片</label>
+                    <input type="file" id="userImage" accept="image/*">
+                    <img id="imagePreview" style="display: none; max-width: 100%; margin-top: 10px;">
+                    <p class="input-tip">支援 jpg、png 格式，建議大小不超過 2MB</p>
+                </div>
+
+                <button type="submit">分享經驗</button>
+            </form>
+        </section>
+
+        <section class="experience-list">
+            <h2>社群分享</h2>
+            <div id="experienceContainer">
+                <!-- 經驗分享內容會動態插入這裡 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 健康生活健身網 版權所有</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

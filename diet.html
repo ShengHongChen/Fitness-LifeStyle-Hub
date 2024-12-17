@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飲食建議 - 健康生活健身網</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="fitness.html">健身計畫</a></li>
+                <li><a href="diet.html">飲食建議</a></li>
+                <li><a href="community.html">社群互動</a></li>
+                <li><a href="equipment.html">器材推薦</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="diet-guide">
+        <h1>健康飲食指南</h1>
+
+        <section class="nutrition-principles">
+            <h2>營養原則</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3>蛋白質 (30%)</h3>
+                    <p>建議每公斤體重攝入1.6-2.2克蛋白質</p>
+                    <ul>
+                        <li>雞胸肉</li>
+                        <li>魚類</li>
+                        <li>蛋白</li>
+                        <li>豆類</li>
+                    </ul>
+                </div>
+                <div class="principle-card">
+                    <h3>碳水化合物 (40%)</h3>
+                    <p>訓練日可適當提高碳水攝入</p>
+                    <ul>
+                        <li>糙米</li>
+                        <li>燕麥</li>
+                        <li>地瓜</li>
+                        <li>全麥麵包</li>
+                    </ul>
+                </div>
+                <div class="principle-card">
+                    <h3>健康脂肪 (30%)</h3>
+                    <p>選擇優質脂肪來源</p>
+                    <ul>
+                        <li>堅果</li>
+                        <li>酪梨</li>
+                        <li>橄欖油</li>
+                        <li>魚油</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="protein-calculator">
+            <h2>蛋白質需求計算器</h2>
+            <div class="calculator-container">
+                <div class="input-group">
+                    <label for="weight">體重 (kg)：</label>
+                    <input type="number" id="weight" min="30" max="200" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="activityLevel">運動強度：</label>
+                    <select id="activityLevel">
+                        <option value="1.6">輕度運動 (每週1-2次)</option>
+                        <option value="1.8">中度運動 (每週3-4次)</option>
+                        <option value="2.2">高強度運動 (每週5次以上)</option>
+                    </select>
+                </div>
+                <button onclick="calculateProtein()">計算蛋白質需求</button>
+                <div class="result-display">
+                    <p id="proteinResult"></p>
+                    <p id="proteinTips"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="meal-plans">
+            <h2>每日餐點建議</h2>
+            <table class="meal-table">
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>餐點內容</th>
+                        <th>營養成分</th>
+                        <th>建議份量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>早餐<br>(7:00-8:00)</td>
+                        <td>
+                            <ul>
+                                <li>燕麥 + 蛋白粉</li>
+                                <li>全麥土司 + 水煮蛋</li>
+                                <li>香蕉/藍莓</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>蛋白質：25g</li>
+                                <li>碳水：45g</li>
+                                <li>脂肪：10g</li>
+                            </ul>
+                        </td>
+                        <td>400-500卡路里</td>
+                    </tr>
+                    <tr>
+                        <td>午餐<br>(12:00-13:00)</td>
+                        <td>
+                            <ul>
+                                <li>糙米飯</li>
+                                <li>雞胸肉</li>
+                                <li>綠葉蔬菜</li>
+                                <li>橄欖油</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>蛋白質：35g</li>
+                                <li>碳水：60g</li>
+                                <li>脂肪：15g</li>
+                            </ul>
+                        </td>
+                        <td>500-600卡路里</td>
+                    </tr>
+                    <tr>
+                        <td>晚餐<br>(18:00-19:00)</td>
+                        <td>
+                            <ul>
+                                <li>地瓜</li>
+                                <li>鮭魚</li>
+                                <li>花椰菜</li>
+                                <li>堅果</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>蛋白質：30g</li>
+                                <li>碳水：40g</li>
+                                <li>脂肪：20g</li>
+                            </ul>
+                        </td>
+                        <td>450-550卡路里</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="diet-tips">
+            <h2>飲食小技巧</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <h3>🕒 用餐時間</h3>
+                    <p>建議每3-4小時進食一次，保持血糖穩定</p>
+                </div>
+                <div class="tip-card">
+                    <h3>💧 水分攝取</h3>
+                    <p>每天至少攝入2-3公升水，運動時需額外補充</p>
+                </div>
+                <div class="tip-card">
+                    <h3>⚠️ 常見誤區</h3>
+                    <p>完全戒除碳水不利於肌肉生長，應適量攝入優質碳水</p>
+                </div>
+                <div class="tip-card">
+                    <h3>📝 飲食紀錄</h3>
+                    <p>建議記錄每日飲食，有助於追蹤營養攝入</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 健康生活健身網 版權所有</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
