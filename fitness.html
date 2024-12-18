@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>健身計畫 - 健康生活健身網</title>
+    <title>健身計畫 - NCKU-FIT</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="glass-nav">
             <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="fitness.html">健身計畫</a></li>
-                <li><a href="diet.html">飲食建議</a></li>
-                <li><a href="community.html">社群互動</a></li>
-                <li><a href="equipment.html">器材推薦</a></li>
-                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="fitness.html"><i class="fas fa-dumbbell"></i> 健身計畫</a></li>
+                <li><a href="diet.html"><i class="fas fa-utensils"></i> 飲食建議</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> 社群互動</a></li>
+                <li><a href="equipment.html"><i class="fas fa-running"></i> 器材推薦</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="fitness-plan">
-        <h1>專業增肌訓練計畫</h1>
+        <h1><i class="fas fa-dumbbell"></i> 專業增肌訓練計畫</h1>
         
         <section class="plan-intro">
-            <h2>訓練週期安排</h2>
+            <h2><i class="fas fa-calendar-alt"></i> 訓練週期安排</h2>
             <div class="timeline">
                 <div class="phase">
-                    <h3>適應期 + 成長期</h3>
-                    <p>週期：7 + 7週</p>
+                    <h3><i class="fas fa-seedling"></i> 適應期 + 成長期</h3>
+                    <p><i class="fas fa-clock"></i> 週期：7 + 7週</p>
                 </div>
                 <div class="phase">
-                    <h3>力量期</h3>
-                    <p>週期：4週</p>
+                    <h3><i class="fas fa-fist-raised"></i> 力量期</h3>
+                    <p><i class="fas fa-clock"></i> 週期：4週</p>
                 </div>
             </div>
         </section>
 
         <section class="workout-plan">
-            <h2>胸部、肩部與三頭訓練</h2>
+            <h2><i class="fas fa-child"></i> 胸部、肩部與三頭訓練</h2>
             <table class="workout-table">
                 <thead>
                     <tr>
@@ -94,7 +96,7 @@
                 </tbody>
             </table>
 
-            <h2>背部與二頭訓練</h2>
+            <h2><i class="fas fa-walking"></i> 背部與二頭訓練</h2>
             <table class="workout-table">
                 <thead>
                     <tr>
@@ -156,7 +158,7 @@
                 </tbody>
             </table>
 
-            <h2>腿部訓練</h2>
+            <h2><i class="fas fa-running"></i> 腿部訓練</h2>
             <table class="workout-table">
                 <thead>
                     <tr>
@@ -202,28 +204,28 @@
         </section>
 
         <section class="training-notes">
-            <h2>訓練注意事項</h2>
+            <h2><i class="fas fa-exclamation-circle"></i> 訓練注意事項</h2>
             <ul>
-                <li>1+3 表示1組熱身組 + 3組訓練組</li>
-                <li>確保每個動作都保持正確姿勢</li>
-                <li>組間休息時間建議為60-90秒</li>
-                <li>訓練前要充分熱身</li>
-                <li>若感覺異常疼痛要立即停止</li>
+                <li><i class="fas fa-fire"></i> 1+3 表示1組熱身組 + 3組訓練組</li>
+                <li><i class="fas fa-check-circle"></i> 確保每個動作都保持正確姿勢</li>
+                <li><i class="fas fa-hourglass-half"></i> 組間休息時間建議為60-90秒</li>
+                <li><i class="fas fa-heart"></i> 訓練前要充分熱身</li>
+                <li><i class="fas fa-exclamation-triangle"></i> 若感覺異常疼痛要立即停止</li>
             </ul>
         </section>
 
         <section class="progress-tracker">
-            <h2>訓練進度追蹤</h2>
+            <h2><i class="fas fa-chart-line"></i> 訓練進度追蹤</h2>
             <div class="progress-input">
                 <div class="input-group">
-                    <label for="startDate">開始日期：</label>
+                    <label for="startDate"><i class="fas fa-calendar-plus"></i> 開始日期：</label>
                     <input type="date" id="startDate">
                 </div>
                 <div class="input-group">
-                    <label for="completedDays">已完成天數：</label>
+                    <label for="completedDays"><i class="fas fa-tasks"></i> 已完成天數：</label>
                     <input type="number" id="completedDays" min="0" max="98">
                 </div>
-                <button onclick="calculateProgress()">計算進度</button>
+                <button onclick="calculateProgress()"><i class="fas fa-calculator"></i> 計算進度</button>
             </div>
             <div class="progress-display">
                 <div class="progress-bar">
@@ -236,7 +238,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 健康生活健身網 版權所有</p>
+        <p><i class="far fa-copyright"></i> 2024 NCKU-FIT 版權所有</p>
     </footer>
 
     <script src="scripts.js"></script>

@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>健康生活健身網</title>
+    <title>NCKU-FIT</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="glass-nav">
             <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="fitness.html">健身計畫</a></li>
-                <li><a href="diet.html">飲食建議</a></li>
-                <li><a href="community.html">社群互動</a></li>
-                <li><a href="equipment.html">器材推薦</a></li>
-                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="fitness.html"><i class="fas fa-dumbbell"></i> 健身計畫</a></li>
+                <li><a href="diet.html"><i class="fas fa-utensils"></i> 飲食建議</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> 社群互動</a></li>
+                <li><a href="equipment.html"><i class="fas fa-running"></i> 器材推薦</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="welcome">
-            <h1>歡迎來到健康生活健身網</h1>
-            <p id="greeting"></p>
-            <div class="hero-image">
-                <img src="images/fitness-hero.jpg" alt="健身背景圖">
+            <h1 class="animated-title">歡迎來到 NCKU-FIT</h1>
+            <br>
+            <p id="greeting" class="typewriter"></p>
+            <div class="hero-image" data-aos="fade-up">
+                <img src="images/gym.png" alt="健身背景圖">
             </div>
         </section>
 
-        <section class="intro">
-            <h2>關於我們</h2>
+        <section class="intro" data-aos="fade-in">
+            <h2><i class="fas fa-info-circle"></i> 關於我們</h2>
             <p>在這裡，您可以找到專業的健身指導、營養建議和相關資源，幫助您實現健康生活目標。</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 健康生活健身網 版權所有</p>
+        <p><i class="far fa-copyright"></i> 2024 NCKU-FIT 版權所有</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>

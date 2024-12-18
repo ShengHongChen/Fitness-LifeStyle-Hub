@@ -1,3 +1,5 @@
+/* 基礎樣式與重置
+----------------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +9,8 @@
 body {
     font-family: "微軟正黑體", sans-serif;
     line-height: 1.6;
+    background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+    min-height: 100vh;
 }
 
 nav {
@@ -25,11 +29,33 @@ nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease-out;
+    border-radius: 4px;
+}
+
+nav a:hover:before {
+    transform: scaleY(1);
 }
 
 nav a:hover {
-    background-color: #555;
-    border-radius: 4px;
+    color: #333;
 }
 
 main {
@@ -48,6 +74,28 @@ main {
     max-height: 400px;
     overflow: hidden;
     margin: 2rem 0;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-image:hover::after {
+    opacity: 1;
 }
 
 .hero-image img {
@@ -88,49 +136,8 @@ footer {
     padding: 1rem;
 }
 
-.workout-table {
-    width: 100%;
-    margin: 2rem 0;
-    border-collapse: collapse;
-}
-
-.workout-table th,
-.workout-table td {
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-.workout-table th {
-    background-color: #333;
-    color: white;
-}
-
-.workout-table tr:nth-child(even) {
-    background-color: #f5f5f5;
-}
-
-.workout-table tr:hover {
-    background-color: #eee;
-}
-
-.training-notes {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-}
-
-.training-notes ul {
-    list-style-position: inside;
-    padding-left: 1rem;
-}
-
-.training-notes li {
-    margin: 0.5rem 0;
-}
-
-/* 進度追蹤區域樣式 */
+/* 進度追蹤相關樣式
+----------------------------------------*/
 .progress-tracker {
     background-color: #f9f9f9;
     padding: 2rem;
@@ -193,6 +200,8 @@ footer {
     font-size: 1.1rem;
 }
 
+/* 飲食指南相關樣式
+----------------------------------------*/
 .diet-guide {
     max-width: 1200px;
     margin: 0 auto;
@@ -221,32 +230,6 @@ footer {
 .principle-card ul {
     list-style-position: inside;
     padding-left: 1rem;
-}
-
-.meal-table {
-    width: 100%;
-    margin: 2rem 0;
-    border-collapse: collapse;
-}
-
-.meal-table th,
-.meal-table td {
-    padding: 1rem;
-    border: 1px solid #ddd;
-}
-
-.meal-table th {
-    background-color: #333;
-    color: white;
-}
-
-.meal-table td ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.meal-table td ul li {
-    margin: 0.5rem 0;
 }
 
 .tips-container {
@@ -289,7 +272,98 @@ footer {
     }
 } 
 
-/* 蛋白質計算器樣式 */
+/* 卡片元件樣式
+----------------------------------------*/
+.principle-card {
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tip-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* 表格樣式
+----------------------------------------*/
+.workout-table,
+.meal-table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workout-table thead,
+.meal-table thead {
+    background-color: #333;
+}
+
+.workout-table th,
+.meal-table th {
+    background-color: #333;
+    color: white;
+    padding: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.workout-table td,
+.meal-table td {
+    padding: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+    vertical-align: top;
+}
+
+.workout-table tr:nth-child(even),
+.meal-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.workout-table tr:nth-child(odd),
+.meal-table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.workout-table tr:hover,
+.meal-table tr:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transition: background-color 0.3s ease;
+}
+
+.workout-table td ul,
+.meal-table td ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.workout-table td ul li,
+.meal-table td ul li {
+    margin: 0.5rem 0;
+    color: #333;
+    line-height: 1.4;
+}
+
+.workout-table i,
+.meal-table i {
+    color: #333;
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+/* 蛋白質計算器樣式
+----------------------------------------*/
 .protein-calculator {
     background-color: #f9f9f9;
     padding: 2rem;
@@ -361,7 +435,8 @@ footer {
     margin-top: 1rem;
 } 
 
-/* 社群互動頁面樣式 */
+/* 社群互動頁面樣式
+----------------------------------------*/
 .community-page {
     max-width: 1200px;
     margin: 0 auto;
@@ -511,3 +586,133 @@ input[type="file"] {
     width: 100%;
     padding: 0.5rem 0;
 } 
+
+/* 導航欄樣式
+----------------------------------------*/
+.glass-nav {
+    background: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 動畫效果
+----------------------------------------*/
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+} 
+
+/* 特效樣式
+----------------------------------------*/
+.intro {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* 文字發光效果 */
+h1, h2 {
+    text-shadow: 0 0 10px rgba(255,255,255,0.3),
+                0 0 20px rgba(255,255,255,0.3),
+                0 0 30px rgba(255,255,255,0.3);
+} 
+
+/* 圖示樣式
+----------------------------------------*/
+nav a i {
+    margin-right: 8px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover i {
+    transform: scale(1.2);
+}
+
+h1 i, h2 i {
+    margin-right: 10px;
+    color: rgba(135, 206, 235, 0.8);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+} 
+
+/* 響應式設計
+----------------------------------------*/
+@media (max-width: 768px) {
+    .workout-table,
+    .meal-table {
+        font-size: 0.9rem;
+    }
+    
+    .workout-table th,
+    .workout-table td,
+    .meal-table th,
+    .meal-table td {
+        padding: 0.8rem;
+    }
+} 
+
+/* 訓練筆記樣式
+----------------------------------------*/
+.training-notes {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.training-notes h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.training-notes ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.training-notes li {
+    margin: 0.5rem 0;
+    color: #333;
+    line-height: 1.6;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

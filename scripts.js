@@ -1,4 +1,3 @@
-// 問候語功能
 function showGreeting() {
     const hour = new Date().getHours();
     let greeting;

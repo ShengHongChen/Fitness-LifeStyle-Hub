@@ -3,78 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>飲食建議 - 健康生活健身網</title>
+    <title>飲食建議 - NCKU-FIT</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="glass-nav">
             <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="fitness.html">健身計畫</a></li>
-                <li><a href="diet.html">飲食建議</a></li>
-                <li><a href="community.html">社群互動</a></li>
-                <li><a href="equipment.html">器材推薦</a></li>
-                <li><a href="contact.html">聯絡我們</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="fitness.html"><i class="fas fa-dumbbell"></i> 健身計畫</a></li>
+                <li><a href="diet.html"><i class="fas fa-utensils"></i> 飲食建議</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> 社群互動</a></li>
+                <li><a href="equipment.html"><i class="fas fa-running"></i> 器材推薦</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="diet-guide">
-        <h1>健康飲食指南</h1>
+        <h1><i class="fas fa-utensils"></i> 健康飲食指南</h1>
 
         <section class="nutrition-principles">
-            <h2>營養原則</h2>
+            <h2><i class="fas fa-apple-alt"></i> 營養原則</h2>
             <div class="principles-grid">
                 <div class="principle-card">
-                    <h3>蛋白質 (30%)</h3>
-                    <p>建議每公斤體重攝入1.6-2.2克蛋白質</p>
+                    <h3><i class="fas fa-drumstick-bite"></i> 蛋白質 (30%)</h3>
+                    <p><i class="fas fa-info-circle"></i> 建議每公斤體重攝入1.6-2.2克蛋白質</p>
                     <ul>
-                        <li>雞胸肉</li>
-                        <li>魚類</li>
-                        <li>蛋白</li>
-                        <li>豆類</li>
+                        <li><i class="fas fa-check"></i> 雞胸肉</li>
+                        <li><i class="fas fa-fish"></i> 魚類</li>
+                        <li><i class="fas fa-egg"></i> 蛋白</li>
+                        <li><i class="fas fa-seedling"></i> 豆類</li>
                     </ul>
                 </div>
                 <div class="principle-card">
-                    <h3>碳水化合物 (40%)</h3>
-                    <p>訓練日可適當提高碳水攝入</p>
+                    <h3><i class="fas fa-bread-slice"></i> 碳水化合物 (40%)</h3>
+                    <p><i class="fas fa-info-circle"></i> 訓練日可適當提高碳水攝入</p>
                     <ul>
-                        <li>糙米</li>
-                        <li>燕麥</li>
-                        <li>地瓜</li>
-                        <li>全麥麵包</li>
+                        <li><i class="fas fa-bowl-rice"></i> 糙米</li>
+                        <li><i class="fas fa-wheat-awn"></i> 燕麥</li>
+                        <li><i class="fas fa-carrot"></i> 地瓜</li>
+                        <li><i class="fas fa-bread-slice"></i> 全麥麵包</li>
                     </ul>
                 </div>
                 <div class="principle-card">
-                    <h3>健康脂肪 (30%)</h3>
-                    <p>選擇優質脂肪來源</p>
+                    <h3><i class="fas fa-oil-can"></i> 健康脂肪 (30%)</h3>
+                    <p><i class="fas fa-info-circle"></i> 選擇優質脂肪來源</p>
                     <ul>
-                        <li>堅果</li>
-                        <li>酪梨</li>
-                        <li>橄欖油</li>
-                        <li>魚油</li>
+                        <li><i class="fas fa-seedling"></i> 堅果</li>
+                        <li><i class="fas fa-leaf"></i> 酪梨</li>
+                        <li><i class="fas fa-tint"></i> 橄欖油</li>
+                        <li><i class="fas fa-fish"></i> 魚油</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section class="protein-calculator">
-            <h2>蛋白質需求計算器</h2>
+            <h2><i class="fas fa-calculator"></i> 蛋白質需求計算器</h2>
             <div class="calculator-container">
                 <div class="input-group">
-                    <label for="weight">體重 (kg)：</label>
+                    <label for="weight"><i class="fas fa-weight"></i> 體重 (kg)：</label>
                     <input type="number" id="weight" min="30" max="200" step="0.1">
                 </div>
                 <div class="input-group">
-                    <label for="activityLevel">運動強度：</label>
+                    <label for="activityLevel"><i class="fas fa-running"></i> 運動強度：</label>
                     <select id="activityLevel">
                         <option value="1.6">輕度運動 (每週1-2次)</option>
                         <option value="1.8">中度運動 (每週3-4次)</option>
                         <option value="2.2">高強度運動 (每週5次以上)</option>
                     </select>
                 </div>
-                <button onclick="calculateProtein()">計算蛋白質需求</button>
+                <button onclick="calculateProtein()"><i class="fas fa-check-circle"></i> 計算蛋白質需求</button>
                 <div class="result-display">
                     <p id="proteinResult"></p>
                     <p id="proteinTips"></p>
@@ -83,19 +85,19 @@
         </section>
 
         <section class="meal-plans">
-            <h2>每日餐點建議</h2>
+            <h2><i class="fas fa-clock"></i> 每日餐點建議</h2>
             <table class="meal-table">
                 <thead>
                     <tr>
-                        <th>時間</th>
-                        <th>餐點內容</th>
-                        <th>營養成分</th>
-                        <th>建議份量</th>
+                        <th><i class="fas fa-clock"></i> 時間</th>
+                        <th><i class="fas fa-utensils"></i> 餐點內容</th>
+                        <th><i class="fas fa-chart-pie"></i> 營養成分</th>
+                        <th><i class="fas fa-balance-scale"></i> 建議份量</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>早餐<br>(7:00-8:00)</td>
+                        <td><i class="fas fa-sun"></i> 早餐<br>(7:00-8:00)</td>
                         <td>
                             <ul>
                                 <li>燕麥 + 蛋白粉</li>
@@ -113,7 +115,7 @@
                         <td>400-500卡路里</td>
                     </tr>
                     <tr>
-                        <td>午餐<br>(12:00-13:00)</td>
+                        <td><i class="fas fa-cloud-sun"></i> 午餐<br>(12:00-13:00)</td>
                         <td>
                             <ul>
                                 <li>糙米飯</li>
@@ -132,7 +134,7 @@
                         <td>500-600卡路里</td>
                     </tr>
                     <tr>
-                        <td>晚餐<br>(18:00-19:00)</td>
+                        <td><i class="fas fa-moon"></i> 晚餐<br>(18:00-19:00)</td>
                         <td>
                             <ul>
                                 <li>地瓜</li>
@@ -155,7 +157,7 @@
         </section>
 
         <section class="diet-tips">
-            <h2>飲食小技巧</h2>
+            <h2><i class="fas fa-lightbulb"></i> 飲食小技巧</h2>
             <div class="tips-container">
                 <div class="tip-card">
                     <h3>🕒 用餐時間</h3>
@@ -178,7 +180,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 健康生活健身網 版權所有</p>
+        <p><i class="far fa-copyright"></i> 2024 NCKU-FIT 版權所有</p>
     </footer>
 
     <script src="scripts.js"></script>
