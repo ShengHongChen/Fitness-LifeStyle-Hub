@@ -216,12 +216,30 @@ function setupImagePreview() {
     });
 }
 
+function contactUs(event) {
+    event.preventDefault();
+    
+    // 顯示感謝訊息
+    document.getElementById('thankYouMessage').style.display = 'block';
+
+    // 清空表單
+    document.getElementById('contactForm').reset();
+
+    // 返回 false 阻止默認提交行為
+    return false; 
+}
+
 window.onload = function() {
     if (document.querySelector('.community-page')) {
         setupCharCount();
         setupImagePreview();
         loadExperiences();
     }
+
+    if (document.querySelector('.contact-form')) {
+        setupCharCount();
+    }
+
     if (document.getElementById("greeting")) {
         showGreeting();
     }

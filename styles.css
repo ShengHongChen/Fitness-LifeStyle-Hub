@@ -70,19 +70,19 @@ main {
     padding: 2rem;
 }
 
-.hero-image {
-    max-height: 400px;
-    overflow: hidden;
-    margin: 2rem 0;
-    position: relative;
-    transition: transform 0.3s ease;
-}
 
-.hero-image:hover {
+.carousel-item:hover {
     transform: scale(1.02);
 }
 
-.hero-image::after {
+.carousel-item img {
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+.carousel-item::after {
     content: '';
     position: absolute;
     top: 0;
@@ -94,17 +94,10 @@ main {
     transition: opacity 0.3s ease;
 }
 
-.hero-image:hover::after {
-    opacity: 1;
+.carousel-item:hover::after {
+    opacity: 1; 
 }
 
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-}
 
 footer {
     background-color: #333;
@@ -444,6 +437,13 @@ footer {
 }
 
 .share-experience {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
     background-color: #f9f9f9;
     padding: 2rem;
     border-radius: 8px;

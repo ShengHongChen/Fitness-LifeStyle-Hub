@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCKU-FIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="glass-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+                <li><a href="fitness.html"><i class="fas fa-dumbbell"></i> 健身計畫</a></li>
+                <li><a href="diet.html"><i class="fas fa-utensils"></i> 飲食建議</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> 社群互動</a></li>
+                <li><a href="equipment.html"><i class="fas fa-running"></i> 器材推薦</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form" >
+            <h1><i class="fas fa-envelope"></i> 聯絡我們</h1>
+            <form id="contactForm" onsubmit="return contactUs(event)">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> 姓名<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required maxlength="20" autocomplete="off">
+                    <span class="char-count">0/20</span>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> 電子郵件</label>
+                    <input type="email" id="email" name="email" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> 手機號碼</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" placeholder="請輸入10位數手機號碼">
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> 詢問內容<span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="4" required maxlength="500" autocomplete="off"></textarea>
+                    <span class="char-count">0/500</span>
+                </div>
+                <button type="submit"><i class="fas fa-paper-plane"></i> 提交</button>
+            </form>
+            <p id="thankYouMessage" style="display: none;">感謝您的詢問，我們將盡快聯繫您！</p>
+        </section>
+
+        <section class="location">
+            <h2><i class="fas fa-map-marker-alt"></i> 我們的位置</h2>
+            <div id="map" class="map-container">
+                <!-- 假設地圖內容，這裡可以使用 Google Maps 來顯示 -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d918.2005517984662!2d120.21869501960099!3d22.994299733245388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7693c7b35aa1%3A0x148f5d1181f29476!2z5oiQ5Yqf5aSn5a245YGl5bq35LyR6ZaS5Lit5b-D77yI5Yud5Yip5qCh5Y2A77yJ!5e0!3m2!1szh-TW!2stw!4v1734529337713!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="far fa-copyright"></i> 2024 NCKU-FIT 版權所有</p>
+    </footer>
+
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
